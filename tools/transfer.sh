@@ -12,12 +12,15 @@
 #   Usage       : transfer.sh <file_to_send>
 #
 #   History     :
-#   8 dec 2013   godbod   initial version
-#
+#   8  dec 2013   godbod   initial version
+#   15 dec 2013   godbod   corrected bug on vars.sh
 #----------------------------------------------------
 
-# Exporting global vars
-source /home/godbod/Classified/tools/global_vars/vars.sh
+# Getting the absolute path
+P=`dirname $0`
+
+# Setting the global vars
+source $P/../global_vars/vars.sh
 
 # Checking parameters
 if [ $# -lt 1 ]
