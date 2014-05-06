@@ -26,7 +26,8 @@ source $P/../global_vars/vars.sh
 if [ $# -lt 1 ]
 then
    echo "[Error] Wrong parameter!"
-   echo "transfer.sh <file_to_send>"
+   echo "the syntax is : $ transfer.sh <file_to_send>"
+   aplay $P/../resources/test.wav >/dev/null 2>&1; 
    exit 1
 fi
 

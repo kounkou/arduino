@@ -18,6 +18,9 @@
 
 # Checking package 
 
+# Getting the absolute path
+P=`dirname $0`
+
 # Defining the necessary packages
 P1=gcc-avr
 P2=avrdude
@@ -30,6 +33,7 @@ then
 else
       echo "$P1 isn't installed."
       echo "Aborted! Please install $P1 with : apt-get install $P1"
+      aplay $P/../resources/test.wav >/dev/null 2>&1; 
       exit 
 fi
 
@@ -40,6 +44,7 @@ then
 else
       echo "$P2 isn't installed." 
       echo "Aborted! Please install $P2 with : apt-get install $P2"
+      aplay $P/../resources/test.wav >/dev/null 2>&1; 
       exit
 fi
 
@@ -50,5 +55,6 @@ then
 else
       echo "$P3 isn't installed." 
       echo "Aborted! Please install $P3 with : apt-get install $P3"
+      aplay $P/../resources/test.wav >/dev/null 2>&1; 
       exit 
 fi
