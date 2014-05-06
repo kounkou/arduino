@@ -17,5 +17,23 @@
 #----------------------------------------------------
 
 # Cleaning files
-rm *.o *.hex outbin 
 
+# cleaning object file
+if [ -f outbin.o ]
+then 
+   rm outbin.o 
+fi
+
+# cleaning hex file
+if [ -f outbin.hex ]
+then
+   rm outbin.hex
+fi
+
+# cleaning arm executable
+if [ -f outbin ]
+then
+   rm outbin
+fi
+
+exit 0

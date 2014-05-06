@@ -1,7 +1,9 @@
-#include <avr/io.h>
-#include <util/delay.h>
+#include <stdio.h>
+#include "test.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
-   return 1; 
+   UCHAR check = 'j';    
+
+   return 0; 
 }

@@ -46,7 +46,7 @@ fi
 if [ ${Clean} -eq 1 ]
 then
    # We will implement the clean here 
-   ./clean.sh
+   $P/../tools/clean.sh
 fi
 
 # We will use this path to generate files at the right place
