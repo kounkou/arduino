@@ -13,7 +13,6 @@
 #
 #   History     :
 #   8  dec 2013   godbod   initial version
-#   13 dec 2013   godbod   added absolute path launching
 #----------------------------------------------------
 
 # Setting the absolute PATH to scripts

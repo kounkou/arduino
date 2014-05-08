@@ -1,3 +1,8 @@
+/**
+ * @author : Godbod
+ * @brief  : simple test source file
+ */
+
 #include <stdio.h>
 #include "test.h"
 

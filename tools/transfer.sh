@@ -27,6 +27,7 @@ if [ $# -lt 1 ]
 then
    echo "[Error] Wrong parameter!"
    echo "the syntax is : $ transfer.sh <file_to_send>"
+   # This will play the sound
    aplay $P/../resources/test.wav >/dev/null 2>&1; 
    exit 1
 fi
