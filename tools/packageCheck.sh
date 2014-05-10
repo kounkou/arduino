@@ -26,35 +26,53 @@ P1=gcc-avr
 P2=avrdude
 P3=avr-libc
 
+status_P1=$(dpkg -s "$P1"|grep installed)
+# echo checking for $P1 : $status_P1
+
+status_P2=$(dpkg -s "$P2"|grep installed) 
+# echo checking for $P2 : $status_P2
+
+status_P3=$(dpkg -s "$P3"|grep installed)
+# echo checking for $P3 : $status_P3
+
 # Step 1 : checking the gcc-avr
-if dpkg -s "$P1" >/dev/null 2>&1; 
+if [ "" == "$status_P1" ]
 then
-      echo "$P1 is installed." 
-else
-      echo "$P1 isn't installed."
-      echo "Aborted! Please install $P1 with : apt-get install $P1"
+      echo "$P1  isn't installed."
       aplay $P/../resources/test.wav >/dev/null 2>&1; 
-      exit 
+      sudo apt-get install gcc-avr
+elif [ "Status: unknown ok not-installed" == "$status_P1" ]
+then
+      echo "not correctly installed $P1"
+      sudo apt-get install gcc-avr
+else
+      echo "$P1  is installed." 
 fi
 
 # Step 2 : checking the avrdude
-if dpkg -s "$P2" >/dev/null 2>&1; 
+if [ "" == "$status_P2" ] 
 then
-      echo "$P2 is installed." 
-else
-      echo "$P2 isn't installed." 
-      echo "Aborted! Please install $P2 with : apt-get install $P2"
+      echo "$P2  isn't installed." 
       aplay $P/../resources/test.wav >/dev/null 2>&1; 
-      exit
+      sudo apt-get install avrdude
+elif [ "Status: unknown ok not-installed" == "$status_P2" ]
+then
+      echo "not correctly installed $P2"
+      sudo apt-get install avrdude
+else
+      echo "$P2  is installed." 
 fi
 
 # Step 3 : checking the avr-libc
-if dpkg -s "$P3" >/dev/null 2>&1; 
+if [ "" == "$status_P3" ] 
 then
-      echo "$P3 is installed." 
-else
       echo "$P3 isn't installed." 
-      echo "Aborted! Please install $P3 with : apt-get install $P3"
       aplay $P/../resources/test.wav >/dev/null 2>&1; 
-      exit 
+      sudo apt-get install avr-libc
+elif [ "Status: unknown ok not-installed" == "$status_P3" ]
+then
+      echo "not correctly installed $P3"
+      sudo apt-get install avr-libc
+else
+      echo "$P3 is installed." 
 fi

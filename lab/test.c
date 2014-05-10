@@ -3,12 +3,12 @@
  * @brief  : simple test source file
  */
 
-#include <stdio.h>
+#include <avr/io.h>
 #include "test.h"
 
-int main(int argc, char **argv)
-{
-   UCHAR check = 'j';    
+int var;
 
-   return 0; 
+int main (int argc, char **argv)
+{
+    return var + SP;
 }

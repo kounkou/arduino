@@ -24,3 +24,7 @@ echo 'Exporting global vars...'
 export AVR_GCC=/usr/bin/avr-gcc
 export AVR_OBJ=/usr/bin/avr-objcopy
 export AVR_DUD=/usr/bin/avrdude
+
+# Compilation flags
+export DF_CPU_CFLAG=16000000UL
+export MMCU_CFLAG=atmega328p
