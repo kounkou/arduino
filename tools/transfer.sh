@@ -23,14 +23,17 @@ P=`dirname $0`
 source $P/../global_vars/vars.sh
 
 # Checking parameters
-if [ $# -lt 1 ]
-then
+if [ $# -lt 2 ]; then
    echo "[Error] Wrong parameter!"
-   echo "the syntax is : $ transfer.sh <file_to_send>"
+   echo "the syntax is : $ transfer.sh <file_to_send> <ttyX>"
    # This will play the sound
-   aplay $P/../resources/test.wav >/dev/null 2>&1; 
+   # aplay $P/../resources/test.wav >/dev/null 2>&1; 
    exit 1
 fi
 
-# Sending the file to arduino
-${AVR_DUD} -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 115200 -U flash:w:$1
+#-----------------------------------------------
+# Sending the file to arduino, you might need to
+# add your user to dialout group
+# sudo adduser <username> dialout 
+#-----------------------------------------------
+${AVR_DUD} -F -V -c arduino -p ATMEGA328P -P /dev/$2 -b 115200 -U flash:w:$1
