@@ -19,8 +19,7 @@
 P=`dirname $0`
 
 # Checking parameters
-if [ $# -lt 1 ]
-then
+if [ $# -lt 1 ]; then
    echo "[Error] Wrong parameter!"
    echo "arduino.sh [-c] <file_to_compile>"
    exit 1
