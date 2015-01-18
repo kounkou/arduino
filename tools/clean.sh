@@ -16,8 +16,6 @@
 #
 #----------------------------------------------------
 
-# Cleaning files
-
 # cleaning object file
 if [ -f outbin.o ]
 then 
