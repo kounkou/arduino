@@ -1,6 +1,6 @@
 "---------------------------------------
 " godbod _c_, All rights reserved 2014
-"
+" please donate : 1FBAXhuwBnTESvB5RKRWGR3fYzWSayPMx2
 " godbod coloration standard class A
 "---------------------------------------
 
