@@ -1,15 +1,16 @@
 "---------------------------------------
 " godbod _c_, All rights reserved 2014
-" please donate : 1FBAXhuwBnTESvB5RKRWGR3fYzWSayPMx2
+"
 " godbod coloration standard class A
 "---------------------------------------
 
+syntax on
+au BufNewFile *.sh r ~/.vim/skeleton.sh
 set background=light
 highlight clear
 set number
 set cursorline
 set hlsearch
-set t_Co=512
 filetype on
 set nowrap
 set cindent
@@ -17,6 +18,9 @@ set sw=3
 set enc=utf-8
 set formatexpr=
 set formatprg=fold\ -w\ 200
+set path=.
+set t_Co=256
+set nohlsearch
 
 hi Cursor       ctermfg=235  ctermbg=231 cterm=NONE guifg=272822 guibg=f8f8f0
 hi Visual       ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=49483e
@@ -68,3 +72,17 @@ hi htmlTagName ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE
 hi htmlArg ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE
 hi Underlined ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE
 hi Todo ctermfg=NONE ctermbg=NONE cterm=inverse guifg=75715e guibg=NONE
+
+syntax match logTRACE /TRACE.*/
+syntax match logDEBUG /DEBUG.*/
+syntax match logINFO /INFO.*/
+syntax match logWARNING /WARN.*/
+syntax match logERROR /ERROR.*/
+syntax match logFATAL /FATAL.*/
+
+highlight logTRACE     ctermfg=cyan    guifg=cyan
+highlight logDEBUG     ctermfg=green   guifg=green
+highlight logINFO      ctermfg=blue    guifg=blue
+highlight logWARNING   ctermfg=magenta   guifg=magenta
+highlight logERROR  ctermfg=red     guifg=red
+highlight logFATAL     ctermfg=red     guifg=red     ctermbg=white   guifg=white
